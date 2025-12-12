@@ -1,0 +1,159 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 40px 20px;
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  max-width: 450px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  margin-top: 30px;
+}
+
+.form > label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form input[type='number'] {
+  padding: 14px 18px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  color: #333;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.form input[type='number']:hover {
+  border-color: #667eea;
+}
+
+.form input[type='number']:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+fieldset {
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+fieldset:hover {
+  border-color: #667eea;
+  background: #f0f2ff;
+}
+
+legend {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  padding: 0 10px;
+}
+
+fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  margin: 8px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  font-weight: 500;
+  color: #555;
+}
+
+fieldset label:hover {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+}
+
+/* Радіокнопки */
+input[type='radio'] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+button[type='submit'] {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+button[type='submit']:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* Коли радіокнопка вибрана */
+input[type='radio']:checked + span {
+  color: #667eea;
+  font-weight: 600;
+}
+
+fieldset label:has(input[type='radio']:checked) {
+  background: rgba(102, 126, 234, 0.15);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.form input[type='number']:invalid:not(:placeholder-shown) {
+  border-color: #f5576c;
+  animation: shake 0.3s ease-in-out;
+}
+
+.form::before {
+  content: 'Create Promise Notification';
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.form input[type='number']:valid {
+  border-color: #4caf50;
+}
+
+.form input[type='number']::placeholder {
+  color: #999;
+  font-weight: 400;
+}
